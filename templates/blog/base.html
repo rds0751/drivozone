@@ -15,51 +15,8 @@
 {% endblock %}
 {% endblock %}
 
-{% block sidebar-right %}
-<br>
-<br>
-<div class="container text-center">
-  
-<div class="row">
-
-  <div class="col-sm-6">
-      <div class="sidebar-item categories">
-
-
-
-      <h3>Browse</h3>
-
-      <ul class="nav navbar-stacked">
-        <li><a href="{% url 'blog:post-archive' %}">Archive</a></li>
-        <li><a href="{% url 'blog:post-archive' %}">2017</a></li>
-        <li><a href="{% url 'blog:post-archive' %}">2018</a></li>
-        <li><a href="{% url 'blog:post-archive' %}">2019</a></li>
-      </ul>
-      <br><br>
-
-
- 
-    </div>
-
-
-{% if post_tags %}
-          <div class="portlet">
-            <h3>Tags</h3>
-
-            <ul>
-              {% for post_tag in post_tags %}
-                <li><a href="{% url 'blog:post-list-by-tag' post_tag.slug %}">{{ post_tag.name }}</a></li>
-              {% endfor %}
-            </ul>
-          </div>
-        {% endif %}
-
-
-  </div>
 
 {% block content %}
 {% endblock %}
 
 
-
-{% endblock %}

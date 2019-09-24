@@ -1,8 +1,11 @@
 from django.shortcuts import get_object_or_404, render
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from .choices import price_choices, vehicle_choices, state_choices
-
 from .models import Listing
+from reviews import signals, get_review_model, get_review_form, get_review_user_weight
+from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.http import require_POST
+
 
 def index(request):
   listings = Listing.objects.order_by('-list_date').filter(is_published=True)
@@ -15,15 +18,18 @@ def index(request):
     'listings': paged_listings
   }
 
+
   return render(request, 'listings/listings.html', context)
 
-def listing(request, listing_id):
+
+def listing(request, listing_id , next=None, using=None):
   listing = get_object_or_404(Listing, pk=listing_id)
+  form = get_review_form()
 
   context = {
-    'listing': listing
+    'listing': listing,
+    'form' : form
   }
-
   return render(request, 'listings/listing.html', context)
 
 def search(request):
@@ -55,7 +61,8 @@ def search(request):
   if 'category' in request.GET:
     category = request.GET['category']
     if category:
-      queryset_list = queryset_list.filter(category__lte=category)
+      queryset_list = queryset_list.filter(category__icontains=category)
+
 
   context = {
     'state_choices': state_choices,

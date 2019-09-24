@@ -25,7 +25,7 @@ SECRET_KEY = 'w6rm%l&xim0ivll-li$u6fg8)6k8-$7uar^f#33ht5sutw8e!#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -47,8 +47,10 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'ckeditor',
     'ckeditor_uploader',
-    'blog',
-    'core',
+    'blog.apps.BlogConfig',
+    'core.apps.CoreConfig',
+    'reviews',
+
 ]
 
 SITE_ID = 1
@@ -89,6 +91,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.request',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
