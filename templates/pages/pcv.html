@@ -1,0 +1,108 @@
+{% extends 'base.html' %} 
+
+{% load humanize %}
+
+{% block title %} | Welcome {% endblock %}
+
+{% block content %}
+<section id="bc" class="mt-3">
+<div class="container">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="{% url 'index' %}">
+      <i class="fas fa-home"></i> Home</a>
+  </li>
+  <li class="breadcrumb-item active">PCV-GCV service</li>
+</ol>
+</nav>
+</div>
+</section>
+<section >
+    <div class="container">
+      <div class="row">
+
+          <div class="blog-post-area">
+        <div class="col-md-12">
+          <h2 class="title text-center">PCV-GCV services</h2>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+<section>
+<div class="container">
+<div class="row">
+<div class="col-sm-8">
+  <p><strong>&nbsp;</strong></p>
+<div class="row">
+  <div class="col-sm-5">
+<img class="img-fluid" style="float:right;" src="/static/images/product-details/pcv1.webp" height="100%" width="100%" >
+</div>
+<div class="col-sm-7">
+<ol>
+  <li>
+  <p><strong>PCV-GCV Spare parts</strong></p>
+  </li>
+</ol>
+
+<p>DrivoZone has successfully expanded its business in Patiala market due to the offered elevated quality array of PCV-GCV spare Parts. Our highly trained professionals only use premium quality components and latest technology while manufacturing these parts. In accordance with international norms and standards, we provide the provided PCV-GCV Parts in different custom made options, according to the requirements of our clients.&nbsp;</p>
+
+<p>In addition, our valuable customers can avail the offered range from us at reasonable prices. Even if you don&rsquo;t want to bother yourself to come and buy any spare part, DrivoZone can provide a home delivery of the spare part.</p>
+
+</div>
+
+</div>
+<br><br>
+<div class="row">
+<div class="col-sm-5">
+<img style="float:left;" src="/static/images/product-details/oil1.jpg" height="100%" width="100%" >
+</div>
+<div class="col-sm-7">
+
+<ol start="2">
+  <li>
+  <p><strong>PCV-GCV Oils</strong></p>
+  </li>
+</ol>
+
+<p>Are you looking for the best engine oil for your Vehicle? If your answer is yes, then you are in the right place. Everyone knows the significance of engine oil. As the engine is considered the heart of the vehicle, engine oil is what keeps this heart beating for a longer time. In other words, you cannot drive without feeding it with a good quality engine oil.</p>
+
+<p>Choosing the right engine oil for your Vehicle is always a task of great difficulty due to the presence of numerous brands and the multiple options to select from a single brand. Therefore, to lend you a helping hand, DrivoZone put forth a list of best engine oils for bikes to assist you in selecting the right one for your motorcycle.</p>
+</div>
+</div>
+
+<br><br>
+<div class="row">
+  <div class="col-sm-5">
+<img style="float:right;" src="/static/images/product-details/trs.jpg" height="100%" width="100%" >
+</div>
+
+<div class="col-sm-7">
+
+<ol start="3">
+  <li>
+  <p><strong>PCV-GCV service</strong></p>
+  </li>
+</ol>
+
+<p>We all know how important it is to go to the doctor for a checkup to make sure everything is running smoothly. Well, the same goes for our PCV-GCV. When the vehicle is designed, manufacturers set out a service schedule for the vehicle, which they believe will keep it running reliably and safely.</p>
+
+<p>If you are unsure about what type of service your vehicle requires then you must visit DrivoZone. Here we keep an eye on your vehicle so that whenever you forget your car service, we will send a reminder to you. Moreover, if you don&rsquo;t like to go out of your home. We will provide PCV-GCV service on your doorstep.&nbsp;</p>
+</div>
+
+</div>
+
+</div>
+
+        <div class="col-sm-4">
+            {% include 'partials/right.html' %}
+
+        </div>
+</div>
+</div>
+</section>
+
+{% include 'partials/_alerts.html' %}
+      {% endblock %}

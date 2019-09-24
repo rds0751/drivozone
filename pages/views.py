@@ -17,6 +17,18 @@ def index(request):
 
     return render(request, 'pages/index.html', context)
 
+def carservice(request):
+    return render(request, 'pages/carservice.html')
+
+def bikeservice(request):
+    return render(request, 'pages/bike.html')
+
+def commericalservice(request):
+    return render(request, 'pages/commerical_v.html')
+
+def pcvservice(request):
+    return render(request, 'pages/pcv.html')
+
 
 def about(request):
     # Get all realtors
